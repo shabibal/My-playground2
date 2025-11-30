@@ -159,6 +159,7 @@ body {
     align-items: center;
     gap: 10px;
     margin: 10px 0;
+    flex-wrap: wrap;
 }
 
 .distance-info {
@@ -943,6 +944,204 @@ ul li, ol li {
     cursor: pointer;
 }
 
+/* --- Products Styles --- */
+.products-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    align-items: end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filter-group label {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.filter-group input,
+.filter-group select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.product-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--btn-transition);
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--btn-transition);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 20px;
+    text-align: right;
+}
+
+.product-info h3 {
+    margin: 0 0 10px 0;
+    color: var(--text-primary);
+    font-size: 1.2em;
+}
+
+.product-category {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- Product Detail Page --- */
+.product-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.product-detail-image img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.product-detail-info h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.product-detail-info .product-category {
+    margin-bottom: 15px;
+}
+
+.product-detail-info .product-price {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.product-description h4,
+.product-features h4 {
+    color: var(--primary-color);
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.product-features ul {
+    padding-right: 20px;
+    margin: 10px 0;
+}
+
+.product-features li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.product-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* --- Products Management --- */
+.products-management {
+    margin-top: 20px;
+}
+
+.management-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.management-header h3 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.products-table-container {
+    overflow-x: auto;
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+.status-badge.in-stock {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-badge.out-of-stock {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.add-product-form {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-top: 20px;
+}
+
+.add-product-form h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
     .container { padding: 20px; margin: 20px auto; }
@@ -977,5 +1176,20 @@ ul li, ol li {
     .map-control-btn {
         width: 35px;
         height: 35px;
+    }
+    .products-filters {
+        flex-direction: column;
+    }
+    .filter-group {
+        width: 100%;
+    }
+    .product-detail {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .management-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
     }
 }
